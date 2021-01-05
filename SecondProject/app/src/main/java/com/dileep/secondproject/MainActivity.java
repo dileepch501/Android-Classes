@@ -28,7 +28,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 Intent intentObjec=new Intent(MainActivity.this,SencondActivity.class);
+                intentObjec.putExtra("email",email.getText().toString());
+                intentObjec.putExtra("password",password.getText().toString());
                 startActivity(intentObjec);
 
 
