@@ -13,7 +13,7 @@ public class SMSActivity extends AppCompatActivity {
 
     TextView emailTxt,passwordTxt;
     EditText number,message;
-    Button sendBtn;
+    Button sendBtn,smafinish;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +24,7 @@ public class SMSActivity extends AppCompatActivity {
         number=findViewById(R.id.number);
         message=findViewById(R.id.mesage);
         sendBtn=findViewById(R.id.send);
+        smafinish=findViewById(R.id.smsFinish);
         Bundle bundle= getIntent().getExtras();
 
         emailTxt.setText("Email:"+bundle.getString("email"));
@@ -49,6 +50,20 @@ public class SMSActivity extends AppCompatActivity {
 
             }
         });
+
+
+        smafinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent finishMsgintent= new Intent();
+                finishMsgintent.putExtra("message","Ramji");
+                setResult(RESULT_OK,finishMsgintent);
+//                startActivity(finishMsgintent);
+
+                finish();
+            }
+        });
+
 
     }
 }

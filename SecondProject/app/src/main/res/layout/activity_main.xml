@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        app:title="Login Page"
+        app:titleTextColor="@color/white"/>
+
+    <TextView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/returnMsg"
+        android:layout_marginTop="30dp"
+        android:gravity="center"/>
+
     <TextView
         android:id="@+id/logintxt"
         android:layout_width="wrap_content"
@@ -44,6 +61,15 @@
         android:layout_margin="30dp"
         android:text="Login"
         android:layout_below="@+id/passwrod"/>
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="next"
+        android:layout_below="@+id/loginBtn"/>
+
+
 
 
 </RelativeLayout>
