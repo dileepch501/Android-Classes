@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 Intent intentObjec=new Intent(MainActivity.this,SMSActivity.class);
+
                 intentObjec.putExtra("email",email.getText().toString());
                 intentObjec.putExtra("password",password.getText().toString());
 

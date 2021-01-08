@@ -27,15 +27,18 @@
             android:layout_height="wrap_content"
             android:text="English"/>
         <CheckBox
+            android:id="@+id/ch2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Telugu"/>
         <CheckBox
+            android:id="@+id/ch3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hindi"/>
 
         <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -64,9 +67,24 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="finish"
+            android:text="submit"
             android:layout_gravity="center"
             android:id="@+id/finish1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alert Dialog"
+            android:layout_gravity="center"
+            android:id="@+id/alert"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/display"
+            android:textSize="18dp"
+            android:textColor="@color/purple_500"/>
+
     </LinearLayout>
 
 

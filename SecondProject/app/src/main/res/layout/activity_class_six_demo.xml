@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClassSixDemo">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login Form"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:textColor="@color/purple_500"
+        android:layout_centerInParent="true"
+        android:id="@+id/titletv"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter email"
+        android:layout_margin="10dp"
+        app:passwordToggleEnabled="true"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/titletv"
+        android:id="@+id/emiltxt"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="phone"
+        android:layout_margin="10dp"
+        app:passwordToggleEnabled="true"
+        android:layout_below="@+id/emiltxt"
+        android:id="@+id/passtxt"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit"
+        android:text="submit"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/passtxt"
+        android:layout_margin="10dp"/>
+
+
+</RelativeLayout>
