@@ -7,14 +7,21 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class SencondActivity extends AppCompatActivity {
 
@@ -23,6 +30,10 @@ public class SencondActivity extends AppCompatActivity {
     CheckBox check1,check2,check3;
     RadioGroup radioGroup;
     TextView displayTxt;
+
+    Spinner spinner,spinner2;
+
+    ArrayList<String> spinnerArrayList=new ArrayList<>();
 
 
     @Override
@@ -38,6 +49,42 @@ public class SencondActivity extends AppCompatActivity {
         radioGroup=findViewById(R.id.radioGroup);
         displayTxt=findViewById(R.id.display);
         alertDialog=findViewById(R.id.alert);
+        spinner=findViewById(R.id.spinner);
+        spinner2=findViewById(R.id.spinner2);
+
+        spinnerArrayList.add("list 1");
+        spinnerArrayList.add("list 2");
+        spinnerArrayList.add("list 3");
+        spinnerArrayList.add("list 4");
+        spinnerArrayList.add("list 5");
+        spinnerArrayList.add("list 6");
+
+        String [] arrayList={"array1","array2","array3","array4"};
+
+
+        ArrayAdapter arrayAdapter=new ArrayAdapter(this, R.layout.spinner_list_item, arrayList);
+       spinner.setAdapter(arrayAdapter);
+
+        ArrayAdapter arrayAdapter2=new ArrayAdapter(this, R.layout.spinner_list_item, spinnerArrayList);
+       spinner2.setAdapter(arrayAdapter2);
+
+       String seletedItem=spinner.getSelectedItem().toString();
+        String seletedItem2=spinner2.getSelectedItem().toString();
+        Toast.makeText(this, seletedItem+"  "+seletedItem2, Toast.LENGTH_SHORT).show();
+
+       spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+           @Override
+           public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+               String seletedItem=spinner.getSelectedItem().toString();
+               String seletedItem2=spinner2.getSelectedItem().toString();
+               Log.e("SpinnerItems",seletedItem+seletedItem2);
+           }
+
+           @Override
+           public void onNothingSelected(AdapterView<?> parent) {
+
+           }
+       });
 
 
 

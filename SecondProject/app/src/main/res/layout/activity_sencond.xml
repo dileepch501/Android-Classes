@@ -85,6 +85,24 @@
             android:textSize="18dp"
             android:textColor="@color/purple_500"/>
 
+        <Spinner
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"/>
+
+        <Spinner
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2"/>
+
+
+
+
+
     </LinearLayout>
 
 

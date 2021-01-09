@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">SecondProject</string>
+
+
+    <array name="spinnerlist">
+        <item>list array 1</item>
+        <item>list array 2</item>
+        <item>list array 3</item>
+        <item>list array 4</item>
+        <item>list 5</item>
+        <item>list 6</item>
+        <item>list 7</item>
+        <item>list 8</item>
+    </array>
 </resources>
