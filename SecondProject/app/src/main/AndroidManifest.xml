@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondProject">
-        <activity android:name=".ClassSixDemo"></activity>
+        <activity android:name=".ListViewPackage.ActivityList"></activity>
+        <activity android:name=".ListViewExample" />
+        <activity android:name=".ClassSixDemo" />
         <activity android:name=".SMSActivity" />
         <activity android:name=".SencondActivity" />
         <activity android:name=".MainActivity">

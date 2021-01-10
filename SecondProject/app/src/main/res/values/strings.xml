@@ -12,4 +12,44 @@
         <item>list 7</item>
         <item>list 8</item>
     </array>
+
+
+    <array name="autolist">
+        <item>Dileep</item>
+        <item>Ramji</item>
+        <item>Aditya</item>
+        <item>Sreenu</item>
+        <item>kumari</item>
+        <item>Madhuri</item>
+        <item>dilraju</item>
+        <item>Ramana</item>
+        <item>Athidhi</item>
+        <item>Dileep</item>
+        <item>Ramji</item>
+        <item>Aditya</item>
+        <item>Sreenu</item>
+        <item>kumari</item>
+        <item>Madhuri</item>
+        <item>dilraju</item>
+        <item>Ramana</item>
+        <item>Athidhi</item>
+        <item>Dileep</item>
+        <item>Ramji</item>
+        <item>Aditya</item>
+        <item>Sreenu</item>
+        <item>kumari</item>
+        <item>Madhuri</item>
+        <item>dilraju</item>
+        <item>Ramana</item>
+        <item>Athidhi</item>
+        <item>Dileep</item>
+        <item>Ramji</item>
+        <item>Aditya</item>
+        <item>Sreenu</item>
+        <item>kumari</item>
+        <item>Madhuri</item>
+        <item>dilraju</item>
+        <item>Ramana</item>
+        <item>Athidhi</item>
+    </array>
 </resources>

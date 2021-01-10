@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.dileep.secondproject.ListViewPackage.ActivityList;
 
 public class MainActivity extends AppCompatActivity {
     TextView returnMsg;
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent secondIntent=new Intent(MainActivity.this,SencondActivity.class);
+                Intent secondIntent=new Intent(MainActivity.this, ActivityList.class);
                 startActivityForResult(secondIntent,103);
             }
         });

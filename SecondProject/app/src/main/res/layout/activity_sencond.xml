@@ -15,6 +15,12 @@
         app:titleTextColor="@color/white"
         app:navigationIcon="@drawable/backicon"/>
 
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
     <LinearLayout
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
@@ -99,11 +105,17 @@
             android:layout_height="wrap_content"
             android:id="@+id/spinner2"/>
 
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/autocompleteview1"/>
 
 
 
 
     </LinearLayout>
+
+</ScrollView>
 
 
 
