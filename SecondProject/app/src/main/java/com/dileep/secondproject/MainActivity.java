@@ -13,9 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dileep.secondproject.ListViewPackage.ActivityList;
+import com.dileep.secondproject.RatingBarsPackage.RatingBarExample;
 
 public class MainActivity extends AppCompatActivity {
     TextView returnMsg;
+    Button nextRating;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
         TextView loginTxt=findViewById(R.id.logintxt);
         Button nextBtn=findViewById(R.id.nextBtn);
         returnMsg=findViewById(R.id.returnMsg);
+        nextRating=findViewById(R.id.ratingBtn);
+
+
+        nextRating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ratingintent=new Intent(MainActivity.this, RatingBarExample.class);
+                startActivity(ratingintent);
+            }
+        });
 
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
