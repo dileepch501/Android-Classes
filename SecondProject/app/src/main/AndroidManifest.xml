@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dileep.secondproject">
 
-   <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,13 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondProject">
-        <activity android:name=".RatingBarsPackage.RatingBarExample"></activity>
+        <activity android:name=".DateTime.DigitalAndAnalogActivity"></activity>
+        <activity android:name=".DateTime.TimeActivity" />
+        <activity android:name=".DateTime.DateActivity" />
+        <activity android:name=".DateTime.AnalogDigital" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".RatingBarsPackage.RatingBarExample" />
         <activity android:name=".ListViewPackage.ActivityList" />
         <activity android:name=".ListViewExample" />
         <activity android:name=".ClassSixDemo" />
         <activity android:name=".SMSActivity" />
         <activity android:name=".SencondActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".DateTime.DateAndTimeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
