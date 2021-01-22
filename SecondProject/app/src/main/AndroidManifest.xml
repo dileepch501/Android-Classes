@@ -11,18 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondProject">
-        <activity android:name=".DateTime.DigitalAndAnalogActivity"></activity>
+        <activity android:name=".SignupPage"></activity>
+        <activity android:name=".DateTime.DateAndTimeActivity" />
+        <activity android:name=".DateTime.DigitalAndAnalogActivity" />
         <activity android:name=".DateTime.TimeActivity" />
         <activity android:name=".DateTime.DateActivity" />
         <activity android:name=".DateTime.AnalogDigital" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ImageLoaders.LoadImage" />
         <activity android:name=".RatingBarsPackage.RatingBarExample" />
         <activity android:name=".ListViewPackage.ActivityList" />
         <activity android:name=".ListViewExample" />
         <activity android:name=".ClassSixDemo" />
         <activity android:name=".SMSActivity" />
         <activity android:name=".SencondActivity" />
-        <activity android:name=".DateTime.DateAndTimeActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
