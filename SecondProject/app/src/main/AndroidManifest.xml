@@ -3,6 +3,8 @@
     package="com.dileep.secondproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
 
     <application
         android:allowBackup="true"
@@ -11,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondProject">
-        <activity android:name=".SignupPage"></activity>
+        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SignupPage" />
         <activity android:name=".DateTime.DateAndTimeActivity" />
         <activity android:name=".DateTime.DigitalAndAnalogActivity" />
         <activity android:name=".DateTime.TimeActivity" />
@@ -24,7 +28,7 @@
         <activity android:name=".ClassSixDemo" />
         <activity android:name=".SMSActivity" />
         <activity android:name=".SencondActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".CameraPackage.SampleCamera">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
