@@ -10,8 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dileep.secondproject.Pjoclasses.DataPojo;
+
+import java.util.ArrayList;
+
 public class RecyclerAdpater extends RecyclerView.Adapter<RecyclerAdpater.RecyclerHolder> {
 
+    ArrayList<DataPojo> dataPojoArrayList;
+
+    public RecyclerAdpater(ArrayList<DataPojo> dataPojoArrayList) {
+        this.dataPojoArrayList = dataPojoArrayList;
+    }
 
     @NonNull
     @Override
@@ -28,11 +37,17 @@ public class RecyclerAdpater extends RecyclerView.Adapter<RecyclerAdpater.Recycl
     @Override
     public void onBindViewHolder(@NonNull RecyclerHolder holder, int position) {
 
+       holder.nameTv.setText(dataPojoArrayList.get(position).getUserName());
+       holder.descTv.setText(dataPojoArrayList.get(position).getDescription());
+
+        holder.profilePic.setImageResource(dataPojoArrayList.get(position).getProfileImage());
+
+
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return dataPojoArrayList.size();
     }
 
 
