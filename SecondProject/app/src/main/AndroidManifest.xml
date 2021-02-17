@@ -18,7 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondProject">
-        <activity android:name=".RecyclerViewFlow.RecyclerList"></activity>
+        <activity android:name=".MaterialUI.SignupForm"></activity>
+        <activity android:name=".RecyclerViewFlow.UsersListActivity" />
+        <activity android:name=".TabLayout.TabExample" />
+        <activity android:name=".RecyclerViewFlow.RecyclerList" />
         <activity android:name=".CameraPackage.SampleCamera" />
         <activity android:name=".CameraActivity" />
         <activity android:name=".MainActivity" />
@@ -35,7 +38,7 @@
         <activity android:name=".ClassSixDemo" />
         <activity android:name=".SMSActivity" />
         <activity android:name=".SencondActivity" />
-        <activity android:name=".RecyclerViewFlow.UsersListActivity">
+        <activity android:name=".MaterialUI.MaterialUIExample">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

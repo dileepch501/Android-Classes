@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MaterialUI.MaterialUIExample">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/whatsappLyt"
+        app:title="MateralDesign"
+        android:layout_alignParentTop="true"
+        app:titleTextColor="@color/white"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+       android:layout_marginHorizontal="20dp"
+        app:startIconDrawable="@drawable/mailicon"
+        android:backgroundTint="@color/white"
+        app:helperTextEnabled="true"
+        app:errorEnabled="true"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/clear_txt"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Enter email id">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/emailLayout"
+        app:errorEnabled="true"
+        android:layout_marginHorizontal="20dp"
+        app:endIconMode="password_toggle"
+        android:backgroundTint="@color/white"
+        app:startIconDrawable="@drawable/passicon"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Enter password">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:inputType="textPassword"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passLayout"
+        app:cornerRadius="10dp"
+        android:text="Submit"
+        android:layout_centerInParent="true"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:backgroundTint="@color/whatsappLyt"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="40dp"/>
+
+
+</RelativeLayout>
