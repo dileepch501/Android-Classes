@@ -1,7 +1,9 @@
 package com.dileep.secondproject.MaterialUI;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,20 +12,26 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.dileep.secondproject.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MaterialUIExample extends AppCompatActivity {
 
     TextInputLayout emailLayout,passLayout;
     TextInputEditText emailEdt,passEdt;
     MaterialButton submit;
+    private FirebaseAuth mAuth;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_material_u_i_example);
-
+        mAuth = FirebaseAuth.getInstance(); // getting instance of the firebaseAuth
         emailLayout=findViewById(R.id.emailLayout);
         passLayout=findViewById(R.id.passLayout);
 
@@ -33,6 +41,7 @@ public class MaterialUIExample extends AppCompatActivity {
         submit=findViewById(R.id.submit);
 
 
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,8 +49,10 @@ public class MaterialUIExample extends AppCompatActivity {
                 if (!validationEmail() | !validationPass()){
                     return;
                 }
-                Intent signupIntent=new Intent(MaterialUIExample.this, SignupForm.class);
-                startActivity(signupIntent);
+
+                signInMethod();
+//                Intent signupIntent=new Intent(MaterialUIExample.this, SignupForm.class);
+//                startActivity(signupIntent);
 //                Toast.makeText(MaterialUIExample.this, "Move to the next screen", Toast.LENGTH_SHORT).show();
 
             }
@@ -77,6 +88,29 @@ public class MaterialUIExample extends AppCompatActivity {
 
           }
       });
+
+    }
+
+    public void signInMethod(){
+        progressDialog=new ProgressDialog(MaterialUIExample.this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+
+        String userName=emailEdt.getText().toString().trim();
+        String password= passEdt.getText().toString().trim();
+
+        mAuth.signInWithEmailAndPassword(userName,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                if (task.isSuccessful()){
+                    Toast.makeText(MaterialUIExample.this, "Login success", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(MaterialUIExample.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+                progressDialog.dismiss();
+            }
+        });
 
     }
 
