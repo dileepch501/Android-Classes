@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dileep.secondproject.R;
@@ -27,6 +28,7 @@ public class MaterialUIExample extends AppCompatActivity {
     MaterialButton submit;
     private FirebaseAuth mAuth;
     ProgressDialog progressDialog;
+    TextView createAct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,17 @@ public class MaterialUIExample extends AppCompatActivity {
         passEdt=findViewById(R.id.passEdt);
         emailLayout.setEndIconVisible(false);
         submit=findViewById(R.id.submit);
+        createAct=findViewById(R.id.creatAct);
+
+
+
+        createAct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signupintent=new Intent(MaterialUIExample.this,SignupForm.class);
+                startActivity(signupintent);
+            }
+        });
 
 
 

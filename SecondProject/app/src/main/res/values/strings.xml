@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">SecondProject</string>
 
+    <string name="createAct"> <u>Create Account</u></string>
 
     <array name="spinnerlist">
         <item>list array 1</item>
