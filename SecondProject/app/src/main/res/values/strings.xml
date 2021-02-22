@@ -53,4 +53,8 @@
         <item>Ramana</item>
         <item>Athidhi</item>
     </array>
+
+    <string name="menuSettings">Settings</string>
+    <string name="menuLogout">Logout</string>
+    <string name="menuSearch">Search</string>
 </resources>
