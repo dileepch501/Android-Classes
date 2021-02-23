@@ -20,6 +20,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MaterialUIExample extends AppCompatActivity {
 
@@ -101,6 +102,19 @@ public class MaterialUIExample extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser!=null){
+            Intent signupIntent = new Intent(MaterialUIExample.this, HomeActivity.class);
+            startActivity(signupIntent);
+            finish();
+        }
+//        updateUI(currentUser);
     }
 
     public void signInMethod() {

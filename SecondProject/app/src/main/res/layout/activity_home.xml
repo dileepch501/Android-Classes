@@ -14,4 +14,13 @@
         app:titleTextColor="@color/white"
         android:id="@+id/toolbar"/>
 
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:text="Popup menu"
+        android:id="@+id/popBtn"/>
+
 </LinearLayout>
