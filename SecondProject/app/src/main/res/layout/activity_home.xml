@@ -9,18 +9,50 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/whatsappLyt"
-        app:title="Home"
+        android:background="@color/whatsappDark"
+        app:title="Whatsapp"
         app:titleTextColor="@color/white"
         android:id="@+id/toolbar"/>
-
-
-    <Button
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:text="Popup menu"
-        android:id="@+id/popBtn"/>
+        app:tabIconTint="@color/white"
+        android:id="@+id/tablayout"
+        style="@style/MyCustomTabLayout"
+        app:tabIndicatorFullWidth="true"
+        app:tabMode="fixed"
+        android:background="@color/whatsappDark">
+
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chats"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calls"
+            />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+
+
 
 </LinearLayout>
