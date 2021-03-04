@@ -1,64 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/drawerLayout"
+    tools:openDrawer="left"
     tools:context=".MaterialUI.HomeActivity">
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/whatsappDark"
-        app:title="Whatsapp"
-        app:titleTextColor="@color/white"
-        android:id="@+id/toolbar"/>
-    <com.google.android.material.tabs.TabLayout
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/whatsappDark"
+                app:title="Whatsapp"
+                app:navigationIcon="@drawable/hamburger"
+                app:titleTextColor="@color/white" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tablayout"
+                style="@style/MyCustomTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whatsappDark"
+                app:tabIconTint="@color/white"
+                app:tabIndicatorFullWidth="true"
+                app:tabMode="fixed">
+
+
+                <!--        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:text="Chats"
+                            />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:text="Status"
+                            />
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calls"
+                            />-->
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
+<com.google.android.material.navigation.NavigationView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:id="@+id/navigationView"
+    app:headerLayout="@layout/headr_layout"
+    android:visibility="visible"
+    app:menu="@menu/drawer_menu">
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIconTint="@color/white"
-        android:id="@+id/tablayout"
-        style="@style/MyCustomTabLayout"
-        app:tabIndicatorFullWidth="true"
-        app:tabMode="fixed"
-        android:background="@color/whatsappDark">
+        android:text="v_1.0.0"
+        android:textColor="@color/black"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"/>
 
+</com.google.android.material.navigation.NavigationView>
 
-<!--        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:text="Chats"
-            />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:text="Status"
-            />
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Calls"
-            />-->
-
-    </com.google.android.material.tabs.TabLayout>
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewPager1"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fragment_container"
-        android:visibility="gone"
-        android:orientation="vertical">
-    </LinearLayout>
-
-
-
-
-
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
