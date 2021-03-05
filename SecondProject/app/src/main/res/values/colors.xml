@@ -15,5 +15,9 @@
     <color name="whatsappLyt">#128C7E</color>
     <color name="whatsappDark">#075E54</color>
     <color name="whatsappLytgalss">#33128C7E</color>
+    <color name="whatsappGreen">#25D366</color>
+    <color name="whatsApptimeColor">#64AF44</color>
+
+    <color name="gray">#8D8D8D</color>
 
 </resources>
