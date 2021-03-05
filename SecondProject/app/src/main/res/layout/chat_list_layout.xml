@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
@@ -12,9 +13,9 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:cardCornerRadius="40dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="30dp"
             android:padding="5dp"
             app:cardElevation="0dp">
             <ImageView
@@ -35,17 +36,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:padding="5dp"
+            android:paddingStart="5dp"
+                android:paddingEnd="5dp"
                 android:textColor="@color/black"
                 android:text="Dileep Android"/>
             <TextView
                 android:id="@+id/messageTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:padding="5dp"
+                android:textSize="14sp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
                 android:layout_below="@+id/nameTv"
-                android:text="Dileep Android"/>
+                android:text="Dileep Android ...."/>
 
         </RelativeLayout>
 
@@ -64,10 +67,11 @@
                 android:textColor="@color/whatsappGreen"
                 android:text="9:30 pm"/>
             <androidx.cardview.widget.CardView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:cardCornerRadius="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:cardCornerRadius="10dp"
                 app:cardElevation="0dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="20dp"
                 android:layout_below="@+id/timeTv"
                 android:layout_alignParentEnd="true"
@@ -76,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1"
-                    android:textSize="18sp"
+                    android:textSize="14sp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:textColor="@color/white"/>
@@ -87,9 +91,10 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
+        android:layout_height="0.2dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
         android:background="@color/gray"/>
 
 
