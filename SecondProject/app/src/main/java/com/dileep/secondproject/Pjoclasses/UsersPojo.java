@@ -3,8 +3,15 @@ package com.dileep.secondproject.Pjoclasses;
 public class UsersPojo {
     String name,message,time,count;
 
+    public UsersPojo() {
+    }
 
-
+    public UsersPojo(String name, String message, String time, String count) {
+        this.name = name;
+        this.message = message;
+        this.time = time;
+        this.count = count;
+    }
 
     public String getName() {
         return name;

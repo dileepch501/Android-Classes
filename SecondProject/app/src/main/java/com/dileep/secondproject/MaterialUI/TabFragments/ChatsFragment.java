@@ -1,11 +1,13 @@
 package com.dileep.secondproject.MaterialUI.TabFragments;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,23 +29,28 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class ChatsFragment extends Fragment {
 
     View rootView;
     FloatingActionButton floating_action_button;
     RecyclerView chatsList;
     ChatsListAdapter chatsListAdapter;
+    ArrayList<UsersPojo> usersPojoArrayList=new ArrayList<>();
+    ProgressDialog progressDialog;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView=inflater.inflate(R.layout.chats_tab,container,false);
-        floating_action_button=rootView.findViewById(R.id.floating_action_button);
-        chatsList=rootView.findViewById(R.id.chatsList);
+        rootView = inflater.inflate(R.layout.chats_tab, container, false);
+        floating_action_button = rootView.findViewById(R.id.floating_action_button);
+        chatsList = rootView.findViewById(R.id.chatsList);
         chatsList.setHasFixedSize(true);
         chatsList.setLayoutManager(new LinearLayoutManager(getContext()));
-        chatsListAdapter=new ChatsListAdapter();
+        chatsListAdapter = new ChatsListAdapter(usersPojoArrayList,getContext());
         chatsList.setAdapter(chatsListAdapter);
+        progressDialog=new ProgressDialog(getContext());
 
         floating_action_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,8 +58,8 @@ public class ChatsFragment extends Fragment {
 
 //                Intent intent=new Intent(getContext(), HomeActivity.class);
 //                startActivity(intent);
-                storeData();
-
+//                storeData();
+                readData();
 
             }
         });
@@ -60,13 +67,51 @@ public class ChatsFragment extends Fragment {
         return rootView;
     }
 
+    private void readData() {
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("usersTable");
+
+// Read from the database
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                usersPojoArrayList.clear();
+                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                    UsersPojo usersPojo=ds.getValue(UsersPojo.class);
+                    usersPojoArrayList.add(usersPojo);
+                }
+                chatsListAdapter.notifyDataSetChanged();
+                progressDialog.dismiss();
+//                UsersPojo usersPojo=dataSnapshot.getValue(UsersPojo.class);
+//                String value = dataSnapshot.getValue(String.class);
+
+//                Log.e("data", usersPojo.getName());
+
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("Error", "Failed to read value.", error.toException());
+            }
+        });
+
+    }
+
     private void storeData() {
 
-        UsersPojo usersPojo=new UsersPojo();
-        usersPojo.setName("Dileep");
-        usersPojo.setMessage("How are you..");
-        usersPojo.setCount("3");
-        usersPojo.setTime("10:30 pm");
+        UsersPojo usersPojo = new UsersPojo("Dileep", "hi this is read", "10:30 pm", "20");
+//        usersPojo.setName("Dileep");
+//        usersPojo.setMessage("How are you..");
+//        usersPojo.setCount("3");
+//        usersPojo.setTime("10:30 pm");
 
 
         // Write a message to the database
@@ -99,8 +144,6 @@ public class ChatsFragment extends Fragment {
 ////                Log.w(TAG, "Failed to read value.", error.toException());
 //            }
 //        });
-
-
 
 
     }
