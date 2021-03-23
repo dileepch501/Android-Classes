@@ -1,34 +1,31 @@
 package com.dileep.secondproject.MaterialUI.TabFragments;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dileep.secondproject.MaterialUI.HomeActivity;
 import com.dileep.secondproject.MaterialUI.TabAdapters.ChatsListAdapter;
 import com.dileep.secondproject.Pjoclasses.UsersPojo;
 import com.dileep.secondproject.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class ChatsFragment extends Fragment {
@@ -51,6 +48,7 @@ public class ChatsFragment extends Fragment {
         chatsListAdapter = new ChatsListAdapter(usersPojoArrayList,getContext());
         chatsList.setAdapter(chatsListAdapter);
         progressDialog=new ProgressDialog(getContext());
+        readData();
 
         floating_action_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +57,23 @@ public class ChatsFragment extends Fragment {
 //                Intent intent=new Intent(getContext(), HomeActivity.class);
 //                startActivity(intent);
 //                storeData();
-                readData();
+
+//                MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), R.raw.sample);
+
+
+                try {
+
+//                    int resID=getResources().getIdentifier("sample.mp3", "raw", getContext().getPackageName());
+//                    MediaPlayer mediaPlayer=MediaPlayer.create(getActivity().getApplicationContext(),resID);
+                   MediaPlayer mediaPlayer = MediaPlayer.create(getActivity(), R.raw.sample);
+//                    mediaPlayer.prepare();
+                    mediaPlayer.start();
+                    mediaPlayer.pause();
+
+                }catch (Exception e){
+                    Log.e("error",e.getMessage());
+                    e.printStackTrace();
+                }
 
             }
         });
