@@ -2,6 +2,7 @@ package com.dileep.secondproject.MaterialUI.TabFragments;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dileep.secondproject.AlarmManager.AlarmScreen;
 import com.dileep.secondproject.MaterialUI.TabAdapters.ChatsListAdapter;
 import com.dileep.secondproject.Pjoclasses.UsersPojo;
 import com.dileep.secondproject.R;
@@ -54,14 +56,14 @@ public class ChatsFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-//                Intent intent=new Intent(getContext(), HomeActivity.class);
-//                startActivity(intent);
+                Intent intent=new Intent(getContext(), AlarmScreen.class);
+                startActivity(intent);
 //                storeData();
 
 //                MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), R.raw.sample);
 
 
-                try {
+              /*  try {
 
 //                    int resID=getResources().getIdentifier("sample.mp3", "raw", getContext().getPackageName());
 //                    MediaPlayer mediaPlayer=MediaPlayer.create(getActivity().getApplicationContext(),resID);
@@ -73,7 +75,7 @@ public class ChatsFragment extends Fragment {
                 }catch (Exception e){
                     Log.e("error",e.getMessage());
                     e.printStackTrace();
-                }
+                }*/
 
             }
         });
