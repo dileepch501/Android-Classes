@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_circle"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondProject">
-        <activity android:name=".AlarmManager.AlarmScreen"></activity>
+        <activity android:name=".GoogleMaps.MapsActivity"></activity>
+        <activity android:name=".AlarmManager.AlarmScreen" />
         <activity android:name=".DummyView" />
         <activity android:name=".MaterialUI.HomeActivity" />
         <activity android:name=".MaterialUI.SignupForm" />
@@ -49,7 +50,11 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".AlarmManager.BroadCastRecieverCustome"/>
+        <receiver android:name=".AlarmManager.BroadCastRecieverCustome" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC9OS7QI4C0OdYiSZXXDeTzLwBbdMNssOQ" />
     </application>
 
 </manifest>

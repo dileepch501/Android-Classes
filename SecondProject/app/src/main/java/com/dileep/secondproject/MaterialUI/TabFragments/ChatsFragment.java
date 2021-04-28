@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dileep.secondproject.AlarmManager.AlarmScreen;
+import com.dileep.secondproject.GoogleMaps.MapsActivity;
 import com.dileep.secondproject.MaterialUI.TabAdapters.ChatsListAdapter;
 import com.dileep.secondproject.Pjoclasses.UsersPojo;
 import com.dileep.secondproject.R;
@@ -56,7 +57,7 @@ public class ChatsFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(getContext(), AlarmScreen.class);
+                Intent intent=new Intent(getContext(), MapsActivity.class);
                 startActivity(intent);
 //                storeData();
 
